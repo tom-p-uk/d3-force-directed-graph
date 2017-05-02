@@ -1,7 +1,7 @@
 const renderForceDirectedGraph = data => {
   // set up required dimensions
   const width = 1050;
-  const height = 700;
+  const height = 750;
   const margin = { top: 30, right: 30, bottom: 30, left: 30 };
 
   // append svg to DOM
@@ -16,7 +16,7 @@ const renderForceDirectedGraph = data => {
       .force('links', d3.forceLink(data.links))
       .force('charge', d3.forceManyBody().strength(-10).distanceMax(25))
       .force('center', d3.forceCenter((width - (margin.left + margin.right))/ 2, (height - (margin.top + margin.bottom)) / 2))
-      .force('collide', d3.forceCollide(18))
+      .force('collide', d3.forceCollide(20))
       .on('tick', tick);
 
   // add flag nodes - must be non-svg elements, as img can not be a child of svg
@@ -44,8 +44,8 @@ const renderForceDirectedGraph = data => {
   // function declarations instead of expressions to allow hoisting
   function tick() {
     node
-      .style('left', d => `${d.x}px`)
-      .style('top', d => `${d.y}px`);
+      .style('left', d => `${d.x + 93}px`)
+      .style('top', d => `${d.y + 97}px`);
 
     link
       .attr('x1', d => d.source.x)
