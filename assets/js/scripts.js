@@ -44,8 +44,8 @@ const renderForceDirectedGraph = data => {
   // function declarations instead of expressions to allow hoisting
   function tick() {
     node
-      .style('left', d => `${d.x + 223}px`)
-      .style('top', d => `${d.y + 60}px`);
+      .style('left', d => `${d.x}px`)
+      .style('top', d => `${d.y}px`);
 
     link
       .attr('x1', d => d.source.x)
